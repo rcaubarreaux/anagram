@@ -38,7 +38,7 @@ public class WordController {
         response = WordIO.class
     )
     @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Successfully retrieved list"),
+            @ApiResponse(code = 200, message = "OK"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found"),
             @ApiResponse(code = 500, message = "Internal server error")
     })
