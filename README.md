@@ -21,6 +21,12 @@ Make sure MongoDB is running an run:
 mvn spring-boot:run
 ```
 
+### Load Dictionary Into Database 
+
+```
+curl -i -X POST -H "Content-Type: application/json" -d @src/main/java/com/caubarreaux/dictionary/dictionary.json http://localhost:8080/words.json
+```
+
 ## Running Tests
 
 ```
