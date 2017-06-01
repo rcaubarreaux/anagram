@@ -45,6 +45,14 @@ http://localhost:8080/swagger-ui.html
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [MongoDB](https://docs.mongodb.com/?_ga=2.13110334.880675633.1496115831-269637611.1496115831) - Database 
 
+## Future Features
+- Endpoint that returns a count of words in the corpus and min/max/median/average word length
+- Respect a query param for whether or not to include proper nouns in the list of anagrams
+- Endpoint that identifies words with the most anagrams
+- Endpoint that takes a set of words and returns whether or not they are all anagrams of each other
+- Endpoint to return all anagram groups of size >=*x*
+- Endpoint to delete a word*and all of its anagrams*
+
 ## Authors
 
 * **Ross Caubarreaux** [rcaubarreaux](https://github.com/rcaubarreaux)

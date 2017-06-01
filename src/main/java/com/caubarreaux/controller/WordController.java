@@ -49,8 +49,7 @@ public class WordController {
 
     @ApiOperation(
             notes = "Adds given word(s) to the collection",
-            value = "Add Word(s)",
-            response = ResponseEntity.class
+            value = "Add Word(s)"
     )
     @ApiResponses(value = {
             @ApiResponse(code = 201, message = "Created"),
@@ -66,8 +65,7 @@ public class WordController {
 
     @ApiOperation(
             notes = "Delete given word from the collection",
-            value = "Delete a Word",
-            response = ResponseEntity.class
+            value = "Delete a Word"
     )
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
@@ -83,8 +81,7 @@ public class WordController {
 
     @ApiOperation(
             notes = "Delete all words from the collection",
-            value = "Delete all Words",
-            response = ResponseEntity.class
+            value = "Delete all Words"
     )
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
