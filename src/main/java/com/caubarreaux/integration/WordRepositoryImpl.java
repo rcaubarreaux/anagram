@@ -16,13 +16,4 @@ public class WordRepositoryImpl implements WordRepositoryCustom {
 
     @Autowired
     private MongoTemplate mongoTemplate;
-
-    // #TODO: Remove
-//    private static <E> Collection<E> toCollection(Iterable<E> iter) {
-//        Collection<E> list = new ArrayList<E>();
-//        for (E item : iter) {
-//            list.add(item);
-//        }
-//        return list;
-//    }
 }

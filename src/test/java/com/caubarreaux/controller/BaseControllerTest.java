@@ -35,13 +35,8 @@ public abstract class BaseControllerTest {
     @MockBean
     public WordService wordService;
 
-//    public void resetMocks() {
-//        Mockito.reset(wordService);
-//    }
-
     public void setUp() throws Exception {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-//        resetMocks();
     }
 
     public static byte[] convertObjectToJsonBytes(Object object) throws IOException {

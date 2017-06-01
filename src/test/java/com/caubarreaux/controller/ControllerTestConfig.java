@@ -15,8 +15,4 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan(basePackages = {"com.caubarreaux.controller"})
 public class ControllerTestConfig {
 
-//    @Bean
-//    public WordService wordService() {
-//        return mock(WordService.class);
-//    }
 }

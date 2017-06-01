@@ -14,7 +14,6 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 
 @RunWith(SpringRunner.class)
-//@DataMongoTest
 @ContextConfiguration(classes = {ServiceTestConfig.class})
 public abstract class BaseServiceTest {
 
