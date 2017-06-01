@@ -127,6 +127,21 @@ public class WordServiceTest extends BaseServiceTest {
     }
 
     @Test
+    public void testGetAllWordsIsEmpty() throws BaseApiException {
+        List<Word> words = new ArrayList<>();
+
+        when(wordRepository.findAll(new Sort(Sort.Direction.ASC, "value"))).thenReturn(words);
+
+        WordIO results = wordService.getAllWords();
+
+        verify(wordRepository, times(1)).findAll(new Sort(Sort.Direction.ASC, "value"));
+
+        assertNotNull(results);
+        assertNotNull(results.getWords());
+        assertThat(results.getWords().size(), is(0));
+    }
+
+    @Test
     public void testDeleteWithNullValue() throws BaseApiException {
         thrown.expect(BadRequestException.class);
         thrown.expectMessage(is("No input provided"));
@@ -217,5 +232,27 @@ public class WordServiceTest extends BaseServiceTest {
 
         assertNotNull(results.getAnagrams().get(0));
         assertThat(results.getAnagrams().get(0), is("Acer"));
+    }
+
+    @Test
+    public void testGetAnagramsForWordWithLimitOfThree() throws BaseApiException {
+        String word = "care";
+        List<Word> anagrams = new ArrayList<>();
+        anagrams.add(new Word("Acer", 4));
+        anagrams.add(new Word("race", 4));
+
+        when(wordRepository.findByLength(4)).thenReturn(anagrams);
+
+        Anagram results = wordService.getAnagramsOfWord(word, "3");
+
+        verify(wordRepository, times(1)).findByLength(4);
+
+        assertNotNull(results);
+        assertNotNull(results.getAnagrams());
+        assertThat(results.getAnagrams().size(), is(2));
+
+        assertNotNull(results.getAnagrams().get(0));
+        assertThat(results.getAnagrams().get(0), is("Acer"));
+        assertThat(results.getAnagrams().get(1), is("race"));
     }
 }

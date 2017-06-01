@@ -11,26 +11,25 @@ These instructions will get you a copy of the project up and running on your loc
 * Java 8
 * Maven (3.3.9 used)
 * MongoDB (3.2.9 used)
-* Spring Boot 
 
 ### Deploying locally
 
-Make sure MongoDB is running an run:
+Make sure MongoDB is running and run the command:
 
 ```
-mvn spring-boot:run
+$ mvn spring-boot:run
 ```
 
 ### Load Dictionary Into Database 
 
 ```
-curl -i -X POST -H "Content-Type: application/json" -d @src/main/java/com/caubarreaux/dictionary/dictionary.json http://localhost:8080/words.json
+$ curl -i -X POST -H "Content-Type: application/json" -d @src/main/java/com/caubarreaux/dictionary/dictionary.json http://localhost:8080/words.json
 ```
 
 ## Running Tests
 
 ```
-mvn test
+$ mvn test
 ```
 
 ## Swagger Documentation
